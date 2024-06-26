@@ -14,7 +14,6 @@ export default async function FormTaskInputs(formData: FormData) {
 				member: memberName,
 				task: task,
 				priority: priority,
-				iscompleted: true,
 			},
 		});
 	} catch (error) {

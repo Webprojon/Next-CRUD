@@ -9,9 +9,9 @@ datasource db {
 }
 
 model Tasks {
-  id          String  @id @default(cuid())
+  id          String   @id @default(cuid())
   member      String
   task        String
   priority    String
-  iscompleted Boolean
+  iscompleted Boolean?
 }
