@@ -10,11 +10,12 @@ interface TasksType {
 	member: string;
 	task: string;
 	priority: string;
+	iscompleted: boolean;
 }
 
 export default function TasksList({ tasks }: any) {
 	const { selectValue } = useGlobalContext();
-	const [filteredtasks, setFilteredTasks] = useState(tasks);
+	const [filteredtasks, setFilteredTasks] = useState(tasks || []);
 
 	useEffect(() => {
 		const handleFilterBySelectValue = (selectValue: string) => {
