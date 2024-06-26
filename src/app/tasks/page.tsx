@@ -128,7 +128,7 @@ export default function TasksList({ tasks }: any) {
 			<div className="absolute -bottom-6 flex justify-between w-full text-sm text-gray-500 font-medium tracking-wider">
 				<p>Built by Tokhirjon ❤️</p>
 				<p>
-					<span>{tasks.length}</span> Active tasks
+					<span>{filteredtasks.length}</span> Active tasks
 				</p>
 			</div>
 		</div>
