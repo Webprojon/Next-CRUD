@@ -13,7 +13,7 @@ export default function UpdateModal({ taskId }: UpdateModalProps) {
 			<div
 				className={`${
 					isUpdated ? "block" : "hidden"
-				} fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[37%] h-[37vh] rounded-md p-4 bg-slate-700 `}
+				} fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[42%] h-[42vh] rounded-md p-4 bg-black/10 backdrop-blur-lg`}
 			>
 				<form
 					action={UpdatedFormInputs}

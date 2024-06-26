@@ -36,6 +36,26 @@ export default function TasksList({ tasks }: any) {
 		setFilteredTasks(filteredItems);
 	}, [selectValue, tasks]);
 
+	const createdDate = (): string => {
+		const today = new Date();
+		const date = new Date(
+			today.getFullYear(),
+			today.getMonth(),
+			today.getDate(),
+		);
+
+		const options: Intl.DateTimeFormatOptions = {
+			weekday: "short",
+			month: "short",
+			day: "numeric",
+		};
+
+		const formattedDate = new Intl.DateTimeFormat("en-US", options).format(
+			date,
+		);
+		return formattedDate;
+	};
+
 	return (
 		<div>
 			<main className="p-4 pt-6">
@@ -72,7 +92,7 @@ export default function TasksList({ tasks }: any) {
 								<UpdateTaskIcon taskId={task.id} />
 								<DeleteTaskIcon taskId={task.id} />
 							</li>
-							<li>Mon, June 20</li>
+							<li>{createdDate()}</li>
 						</ul>
 					))}
 				</div>
@@ -125,7 +145,7 @@ export default function TasksList({ tasks }: any) {
 				</form>
 			</footer>
 
-			<div className="absolute -bottom-6 flex justify-between w-full text-sm text-gray-500 font-medium tracking-wider">
+			<div className="absolute -bottom-6 flex justify-between w-full text-sm text-gray-400 font-medium tracking-wider">
 				<p>Built by Tokhirjon ❤️</p>
 				<p>
 					<span>{filteredtasks.length}</span> Active tasks
